@@ -1,5 +1,12 @@
 import ctypes
 
+#tasks
+
+#sort/min/max/sum extend
+#negative indexing
+#slicing
+#merge
+
 class MeraList:
     def __init__(self):
         self.size = 1 #size of array
@@ -54,7 +61,12 @@ class MeraList:
         self.A[pos]= item
         self.n = self.n+1
 
-
+    def remove(self, item):
+        pos =self.find(item)
+        if type(pos)==int:
+            self.__delitem__(pos)
+        else:
+            return pos
 
     def clear(self):
         self.n =0
@@ -91,7 +103,7 @@ L.append("hello")
 L.append("bucket")
 L.append("bags")
 L.append("truth")
-del L[2]
+L.remove("hello")
 print(L)
 
 #print(f"Object type: {type(L)}")
