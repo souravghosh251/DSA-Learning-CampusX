@@ -23,7 +23,13 @@ class MeraList:
         else:
             return "Index out of range"
 
-    def __delitem__(self,index):
+    def __delitem__(self,pos ):
+
+        if 0<=pos<self.n:
+            for i in range(pos, self.n-1):
+                self.A[i] = self.A[i+1]
+
+        self.n = self.n-1
 
     def append(self,item):
         if self.n == self.size:
@@ -81,9 +87,11 @@ class MeraList:
 
 
 L = MeraList()
-L.insert(0,0)
 L.append("hello")
-L.append("mahakal")
+L.append("bucket")
+L.append("bags")
+L.append("truth")
+del L[2]
 print(L)
 
 #print(f"Object type: {type(L)}")
